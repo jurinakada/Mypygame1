@@ -1,5 +1,6 @@
 import pygame
 import sys
+import random
 
 pygame.init()
 
@@ -11,9 +12,11 @@ dt = 0
 player_speed = 300
 
 #enemy object settings
-enemy_pos = pygame.Vector2(100, 100)
+def enemy_spawn():
+    enemy = {
 
-enemy_pos2 = pygame.Vector2(200, 200)
+        
+    }
 
 
 clock = pygame.time.Clock()
@@ -38,12 +41,10 @@ while running:
     if keys[pygame.K_d]:
         player_pos.x += player_speed * dt
 
-    pygame.draw.circle(screen,"blue",enemy_pos, 100)
-    enemy_pos.x += 100 * dt
-    
-    pygame.draw.rect(screen,"yellow",pygame.Rect(enemy_pos2.x, enemy_pos2.y, 100, 100))
-    enemy_pos2.y += 100 * dt
+#enemy
+
 
     pygame.display.flip()
     dt = clock.tick(60) / 1000
 
+ 
